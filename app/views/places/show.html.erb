@@ -1,9 +1,10 @@
 <% provide :head_tags do %>
-    <script>
+  <meta name='turbolinks-visit-control' content='reload'>
+  <script>
     document.addEventListener("DOMContentLoaded", function(){
-        initMap(<%=@place.latitude%>, <%=@place.longitude%>)
+      initMap(<%=@place.latitude%>, <%=@place.longitude%>)
     });
-    </script>
+  </script>
 <% end %>
 
 <p id="notice"><%= notice %></p>

@@ -15,10 +15,12 @@ Pre requisites: basic knowledge of Rails and Javascript
 
 Please visit the link to view tutorial on Medium:
 
-https://medium.com/...
+https://medium.com/@pjbelo/using-google-maps-api-v3-with-rails-5-2-b066a4b2cf14
 
 
 You can check the commit history for the different code versions.
+
+To use this App you must setup your Google Maps API Key using rails credentials with the name: google_maps_api_key
 
 Please feel free to contact. I'll be glad to help if I can :-)
 

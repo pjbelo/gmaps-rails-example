@@ -20,6 +20,14 @@ function initMap(lat, lng) {
 function initMap2() {
     var lat = document.getElementById('place_latitude').value;
     var lng = document.getElementById('place_longitude').value;
+
+    // if not defined create default position
+    if (!lat || !lng){
+        lat=51.5;
+        lng=-0.125;
+        document.getElementById('place_latitude').value = lat;
+        document.getElementById('place_longitude').value = lng;
+    }
     
     var myCoords = new google.maps.LatLng(lat, lng);
     var mapOptions = {
@@ -56,7 +64,7 @@ function initMap2() {
         document.getElementById('place_latitude').value = newlat;
         document.getElementById('place_longitude').value = newlng;
     });
-    
+
     // When drag ends, center (pan) the map on the marker position
     marker.addListener('dragend', function() {
         map.panTo(marker.getPosition());   

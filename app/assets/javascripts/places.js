@@ -14,5 +14,23 @@ function initMap(lat, lng) {
         position: myCoords,
         map: map
     });
+
+}
+
+function initMap2() {
+    var lat = document.getElementById('place_latitude').value;
+    var lng = document.getElementById('place_longitude').value;
     
+    var myCoords = new google.maps.LatLng(lat, lng);
+    var mapOptions = {
+    center: myCoords,
+    zoom: 14
+    };
+    var map = new google.maps.Map(document.getElementById('map2'), mapOptions);
+    var marker = new google.maps.Marker({
+        position: myCoords,
+        animation: google.maps.Animation.DROP,
+        map: map,
+        draggable: true
+    });
 }

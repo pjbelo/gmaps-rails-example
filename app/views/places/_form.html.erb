@@ -1,3 +1,10 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", initMap2);
+    </script>
+<% end %>
+
 <%= form_with(model: place, local: true) do |form| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
@@ -25,6 +32,10 @@
     <%= form.label :longitude %>
     <%= form.text_field :longitude %>
   </div>
+
+  <p>
+    <div id="map2"></div>
+  </p>
 
   <div class="actions">
     <%= form.submit %>

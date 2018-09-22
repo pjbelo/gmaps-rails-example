@@ -48,4 +48,18 @@ function initMap2() {
     document.getElementById('place_latitude').onchange = refreshMarker;
     document.getElementById('place_longitude').onchange = refreshMarker;
 
+    // when marker is dragged update input values
+    marker.addListener('drag', function() {
+        latlng = marker.getPosition();
+        newlat=(Math.round(latlng.lat()*1000000))/1000000;
+        newlng=(Math.round(latlng.lng()*1000000))/1000000;
+        document.getElementById('place_latitude').value = newlat;
+        document.getElementById('place_longitude').value = newlng;
+    });
+    
+    // When drag ends, center (pan) the map on the marker position
+    marker.addListener('dragend', function() {
+        map.panTo(marker.getPosition());   
+    });
+
 }
